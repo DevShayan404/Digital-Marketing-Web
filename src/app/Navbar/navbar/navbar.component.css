@@ -1,0 +1,113 @@
+.main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    transition: top 0.5s ease-in-out;
+    z-index: 100;
+}
+main.navbar--hidden {
+    top: -50px;
+  }
+  /* .activeHeader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    transition: top 0.5s ease-in-out;
+    z-index: 100;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.22);
+  } */
+.header-main{
+    font-size: .9rem;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 0;
+    background-color: var(--blue);
+    color: #fff;
+    position: relative;
+}
+.header-main a{
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.header-main i{
+    font-size: 1rem;
+}
+.header-main .bx-x{
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate( -50%, -50%);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+/* <!-----------------Navbar----------------------------------------------> */
+.navbar-section{
+}
+.navbar-main{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--black);
+    padding: 30px 0 20px 0;
+}
+.navbar-logo{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.navbar-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.navbar-links a{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--font-black);
+    font-weight: 500;
+    text-decoration: none;
+}
+.navbar-links a i{
+    font-size: 1.2rem;
+
+}
+.navbar-button{
+    display: flex;
+    gap: 10px;
+
+}
+.navbar-button .schedule{
+    border: none;
+    background-color: transparent;
+    color:  var(--black);
+    padding: 8px 15px;
+    font-weight: 500;
+    transition: .3s linear;
+}
+.navbar-button .schedule:hover{
+    color: var(--blue);
+}
+.navbar-button .started{
+    border: 1px solid var(--blue);
+    background-color: var(--blue);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: .3rem;
+    font-weight: 500;
+    transition: .3s linear;
+}
+.navbar-button .started:hover{
+    background-color: transparent;
+    color: var(--blue);
+}

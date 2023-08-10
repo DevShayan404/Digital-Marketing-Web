@@ -1,0 +1,75 @@
+.Image-Slider{
+    width: 100%;
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.316);
+    height: 100vh;
+    z-index: 100;
+
+}
+.sliderImage-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.sliderImage-main i{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    color: var(--bgc-gray);
+    cursor: pointer;
+}
+.sliderImage-main img{
+    width: 25%;
+    min-height: max-content;
+    max-height: 76vh;
+}
+.imgSlider-div{
+    position: relative;
+}
+.loopImages{
+    cursor: pointer;
+    height: 15vh;
+}
+.ng-carousel::ng-deep.owl-theme .owl-nav .owl-next {
+    color: #FFF;
+    background: rgba(60, 60, 60, 0.798);
+    border-radius: 5rem;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    font-size: 2rem;
+    transition: .3s all;
+}
+.ng-carousel::ng-deep.owl-theme .owl-nav .owl-prev {
+    color: #FFF;
+    background: rgba(60, 60, 60, 0.798);
+    border-radius: 5rem;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    font-size: 2rem;
+    transition: .3s all;
+}
+.ng-carousel::ng-deep.owl-theme .owl-nav .owl-next:hover{
+    background-color: #d0deffb2;
+    color: black;
+}
+.ng-carousel::ng-deep.owl-theme .owl-nav .owl-prev:hover{
+    background-color: #d0deffb2;
+    color: black;
+}

@@ -1,0 +1,36 @@
+<section *ngIf="isNavbarVisible">
+    <div class="main">
+<div *ngIf="closeHeader" class="container-fluid">
+    <div class="row">
+        <div class="header-main">
+            <i class='bx bxs-zap'></i>
+            <span>Pricing from only $99/mo -</span>
+            <a>Get Started</a>
+            <i (click)="headerClose()" class='bx bx-x' ></i>
+        </div>
+    </div>
+</div>
+<!-----------------Navbar-------------------------------------------- -->
+<section class="navbar-section">
+    <div class="container g-0">
+        <div class="row g-0">
+            <div class="navbar-main">
+                <div class="navbar-logo">
+                    DmmWeb
+                </div>
+                <div class="navbar-links">
+                    <a>Company<i class='bx bx-chevron-down'></i></a>
+                    <a>Examples</a>
+                    <a routerLink="Get-Started">Pricing</a>
+                </div>
+                <div class="navbar-button">
+                    <button class="schedule">Schedule Demo</button>
+                    <button class="started">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+</section>
+

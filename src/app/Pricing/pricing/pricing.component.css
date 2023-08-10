@@ -1,0 +1,375 @@
+.pricingSection {
+  background-image: url(../../../assets/images/pricingBGI.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  margin-top: 150px;
+}
+.pricingSection .container {
+  width: 75%;
+}
+.pricingSection h1 {
+  font-weight: 600;
+}
+.pricingSection p {
+  font-size: 1.2rem;
+  color: var(--font-black);
+}
+.pricingSection span {
+  color: #595959;
+  font-size: 0.9rem;
+}
+.pricingSection span a {
+  color: var(--blue);
+  font-weight: bold;
+}
+.ngCard::ng-deep.p-card {
+  margin-bottom: 20px;
+}
+.ngCard::ng-deep.p-card .p-card-body {
+  padding: 0;
+}
+.ngCard::ng-deep.p-card .p-card-content {
+  padding: 15px;
+}
+.card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.card-icon i {
+  font-size: 1.3rem;
+  border-radius: 5rem;
+  border: 1px solid var(--font-black);
+  padding: 2px;
+}
+.card-spec {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+}
+.card-spec h5 {
+  /* font-size: 1.1rem; */
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+}
+.card-spec span {
+  font-size: 1rem;
+  color: var(--font-black);
+}
+.card-price h5 {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.9px;
+  color: var(--black);
+}
+.card-price span {
+  color: #949494;
+  font-size: 1.1rem;
+}
+.right-pricingDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+.right-pricingDiv::ng-deep.p-card {
+  /* width:%; */
+}
+.right-pricingDiv::ng-deep.p-card .p-card-body {
+  padding: 0;
+}
+.right-pricingDiv::ng-deep.p-card .p-card-content {
+  padding: 25px;
+}
+.right-pricingDiv::ng-deep.p-card .p-card-content h5 {
+  font-weight: 700;
+  /* font-size: 1.2rem; */
+}
+.right-pricingDiv::ng-deep.p-card .p-card-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.right-pricingDiv::ng-deep.p-card .p-card-content ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  color: var(--font-black);
+  margin: 15px 0;
+  /* font-size: 1.1rem; */
+}
+.right-pricingDiv::ng-deep.p-card .p-card-content ul li i {
+  font-size: 1.3rem;
+  color: var(--blue);
+}
+.right-pricingDiv::ng-deep.p-card .p-card-content button {
+  width: 100%;
+  border: none;
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: var(--blue);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.optional-main {
+  margin-top: 60px;
+}
+.optional-main h1 {
+  font-weight: 700;
+}
+.optional-main h5 {
+  font-size: 700;
+}
+.optional-main::ng-deep.p-card {
+  margin-top: 20px;
+}
+.optional-main::ng-deep.p-card .p-card-body {
+  padding: 0;
+}
+.optional-main::ng-deep.p-card .p-card-content {
+  padding: 20px;
+}
+.optional-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.optional-card h6 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--black);
+}
+.optional-card h6 span {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-left: 20px;
+}
+.optional-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.optional-card ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.optional-card ul li i {
+  font-size: 1.4rem;
+  color: var(--blue);
+}
+
+.instaReel-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  flex-flow: column wrap;
+  width: 100%;
+}
+.instaReel-section h5 {
+  color: var(--blue);
+  font-weight: 700;
+}
+.instaReel-cardMain {
+  display: flex;
+  gap: 35px;
+}
+.instaReel-cardMain::ng-deep.p-card {
+  width: 100%;
+}
+.instaReel-cardMain::ng-deep.p-card .p-card-body {
+  padding: 0;
+}
+.instaReel-cardMain::ng-deep.p-card .p-card-content {
+  padding: 20px;
+}
+.intsReel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.intsReel-card h5 {
+  color: var(--black);
+  font-size: 1.2rem;
+}
+.intsReel-card span {
+  font-size: 1rem;
+  color: #949494;
+  font-weight: 500;
+}
+.intsReel-card strong {
+  color: var(--black);
+  margin-top: 30px;
+}
+/* <!-- -------------frequently ask question Section------------------------------------------------- --> */
+
+.askQuestion-main {
+  padding: 40px;
+  background-color: #f8f9fa;
+}
+.askQuestion-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.askQuestion-header h1 {
+  background: linear-gradient(90deg, #000, #145aff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: 700;
+  font-size: 52px;
+}
+.askQuestion-header p {
+  width: 50%;
+  text-align: center;
+  color: var(--font-black);
+  font-size: 1.2rem;
+}
+.askQuestion-header span {
+  color: var(--blue);
+  cursor: pointer;
+}
+.panel {
+  width: 60%;
+}
+.panel::ng-deep.p-panel .p-panel-header {
+  border: none;
+  padding: 1.25rem;
+  background: transparent;
+  color: #343a40;
+  border-radius: none;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--light-gray);
+}
+.panel::ng-deep.p-panel .p-panel-content {
+  padding: 1.25rem;
+  border: none;
+  background: transparent;
+  color: #343a40;
+  border-radius: 0;
+  border-bottom: 1px solid var(--light-gray);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top: 0 none;
+}
+
+/* <!-- -------------Verified Customer review Section------------------------------------------------- --> */
+.verified-main {
+  /* background-color: #fafafa; */
+  padding: 60px;
+}
+.verified-spec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.verified-spec span {
+  color: var(--blue);
+  font-weight: 500;
+}
+.verified-spec h1 {
+  background: linear-gradient(90deg, #000, #145aff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: 700;
+  font-size: 45px;
+}
+.verified-spec p {
+  color: var(--font-black);
+  width: 60%;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.verified-comment {
+  margin: 20px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+.verified-comment .card {
+  flex-basis: 40%;
+  padding: 15px 20px;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.22);
+}
+.verified-comment .card-header {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+.avatar-name {
+  display: flex;
+  flex-direction: column;
+}
+.avatar-name strong {
+  font-size: 1.2rem;
+}
+.avatar-name span {
+  font-weight: 500;
+  color: var(--font-black);
+  font-size: 0.9rem;
+}
+.verified-comment .card-body {
+  color: var(--font-black);
+  padding: 0;
+  margin: 10px 0 0 0;
+  font-weight: 500;
+}
+.avatar-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  /* align-items: center; */
+}
+.avatar-group span {
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+.rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.rate span {
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}

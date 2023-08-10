@@ -1,0 +1,784 @@
+<section>
+  <div class="container-fluid firstSection">
+    <div class="row pt-5">
+      <div class="col-5 p-4">
+        <div class="firstSection-left">
+          <a>US & EU BASED TEAM</a>
+          <h1>
+            <span>Hire an expert</span> Social Media Manager, from only $99/mo
+          </h1>
+          <p>
+            Social media posts – done for you. We’ll even post to your channels
+            after you've approved.
+          </p>
+          <button>Sounds Great, Sign Me Up!</button>
+          <ul>
+            <li><i class="bx bx-check-circle"></i>Made by experts</li>
+            <li><i class="bx bx-check-circle"></i>Cance anytime</li>
+          </ul>
+          <div class="firstSection-social">
+            <!-- <span> -->
+            <img src="assets\images\facebook.png" alt="" />
+            <img src="assets\images\instagram.png" alt="" />
+            <img src="assets\images\twitter.png" alt="" />
+            <img src="assets\images\pinterest.png" alt="" />
+            <img src="assets\images\tiktok.png" alt="" />
+            <img src="assets\images\linkedin.png" alt="" />
+            <img src="assets\images\youtube.png" alt="" />
+            <!-- </span> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <div class="firstVideoSection">
+          <div class="firstVideo-left">
+            <!-- <img class="loopImg"  [src]="images[currentImageIndex]" alt=""> -->
+            <div class="subImages-main" *ngIf="showSecondDiv">
+              <ul>
+                <li>
+                  <div *ngFor="let img of images.slice(1, 4); let i = index">
+                    <img
+                      *ngIf="i === currentImageIndex"
+                      [@slidedown]
+                      [src]="img.src"
+                      alt=""
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div *ngFor="let img of images.slice(0, 3); let i = index">
+                    <img
+                      *ngIf="i === currentImageIndex"
+                      [@slideInLeft]
+                      [src]="img.src"
+                      alt=""
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div *ngFor="let img of images.slice(2, 5); let i = index">
+                    <img
+                      *ngIf="i === currentImageIndex"
+                      [@slideInRight]
+                      [src]="img.src"
+                      alt=""
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div *ngFor="let img of images.slice(3, 6); let i = index">
+                    <img
+                      *ngIf="i === currentImageIndex"
+                      [@slideInUp]
+                      [src]="img.src"
+                      alt=""
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="carousel-main" *ngIf="showFirstDiv" [@zoomOut]>
+              <owl-carousel-o class="hello" [options]="customOptions">
+                <ng-container *ngFor="let img of images">
+                  <ng-template carouselSlide>
+                    <img class="loopImg" [src]="img.src" alt="" />
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </div>
+          </div>
+          <div class="firstVideo-right">
+            <!-- <video
+            width="100%"
+            autoplay
+            loop
+            [muted]="'muted'"
+            [src]="videos[currentVideoIndex]"
+          ></video> -->
+            <div *ngFor="let video of videos; let i = index">
+              <video
+                width="100%"
+                height="100%"
+                autoplay
+                loop
+                [muted]="'muted'"
+                [src]="video"
+                *ngIf="i === currentVideoIndex"
+                [@slide]
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -------------second Section------------------------------------------------- -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="socail-main">
+        <h1>Social Media Posts Example</h1>
+        <p>
+          Great content with your branding at very affordable rates. We handle
+          the visuals, captions,<br />
+          and hashtags.
+        </p>
+        <a>Reset Filter</a>
+        <div class="button-section">
+          <button *ngFor="let button of socailButton">
+            {{ button.buttonName }}
+          </button>
+        </div>
+        <div class="card-main">
+          <div class="img-card" *ngFor="let img of cardImages.slice(0, 6)">
+            <img [src]="img.src" alt="" (click)="sliderImage(img.src)" />
+          </div>
+          <div *ngIf="hello">
+            <div
+              class="img-card"
+              *ngFor="let img of cardImages.slice(6, 10)"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <img [src]="img.src" alt="" (click)="sliderImage(img.src)" />
+            </div>
+          </div>
+          <div *ngIf="hello">
+            <div
+              class="img-card"
+              *ngFor="let img of cardImages.slice(10, 20)"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <img [src]="img.src" alt="" (click)="sliderImage(img.src)" />
+            </div>
+          </div>
+        </div>
+
+        <button class="showMore-button" (click)="showMoreCard()">
+          Show more posts example
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="carouselModa" class="Image-Slider">
+  <div class="sliderImage-main">
+    <img [src]="carouselImageShow" alt="" />
+    <i (click)="carouselSliderModal()" class="bx bx-x"></i>
+  </div>
+  <div class="imgSlider-div">
+    <owl-carousel-o class="ng-carousel" [options]="owlOption">
+      <ng-container *ngFor="let img of cardImages">
+        <ng-template carouselSlide>
+          <img class="loopImages ps-1" [src]="img.src" alt="" (click)="sliderImage(img.src)"/>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</div>
+
+<!-- -------------Reels & Tiktok video Section------------------------------------------------- -->
+<section>
+  <div class="container tiktokReel-main">
+    <div class="row mt-3">
+      <h1>Reels & Tiktok Video Examples</h1>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center mt-4 mb-4">
+      <div class="col-3" *ngFor="let video of videos">
+        <div class="tiktokReel-videoSec">
+          <video
+            width="100%"
+            autoplay
+            [muted]="'muted'"
+            controls
+            loop
+            [src]="video"
+          ></video>
+          <span>personal Blog</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -------------3 simple step Section------------------------------------------------- -->
+<section class="simpleStep-main">
+  <div class="container">
+    <div class="row">
+      <h1>3 Simple Steps</h1>
+    </div>
+    <div class="row mt-4">
+      <div class="col-4" *ngFor="let img of simpleImage">
+        <div class="simpleImages">
+          <img [src]="img.url" alt="" />
+          <h5>{{ img.tittle }}</h5>
+          <p>{{ img.detail }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -------------watch video Section------------------------------------------------- -->
+<section class="watchVideo-main">
+  <div class="container">
+    <div class="row">
+      <h1>Watch Video Demo</h1>
+    </div>
+    <div class="row d-flex justify-content-center mt-4">
+      <iframe
+        src="https://www.youtube.com/embed/jTX8MSw0Ufw"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="row d-flex align-items-center mt-5">
+      <div class="col-8">
+        <div class="review-img">
+          <img src="assets\images\review.png" alt="" />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="review-main">
+          <span>APPROVAL WORKFLOW</span>
+          <strong>Review & Approve</strong>
+          <p>
+            When reviewing your posts, simply approve or leave feedback in our
+            easy to use dashboard.
+          </p>
+          <p>We'll never post anything you haven't approved.</p>
+          <button>Get Started</button>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex align-items-center mt-5">
+      <div class="col-4">
+        <div class="review-main">
+          <span>VISUALLY PLANNED</span>
+          <strong>See all upcoming posts with ease</strong>
+          <p>
+            Your content is visually scheduled for you to have a perfect
+            overview of all upcoming posts on all your social channels.
+          </p>
+          <button>Get Started</button>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="review-img">
+          <img src="assets\images\review2.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="socialChannel-img3" src="assets\images\socialImg3.svg" alt="" />
+</section>
+<!-- -------------social channel Section------------------------------------------------- -->
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="socailChannel-main">
+        <h1>Social channels we work with</h1>
+        <ul>
+          <li>
+            <img src="assets\images\facebook.png" alt="" />
+            <strong>Facebook</strong>
+            <span>Supported</span>
+          </li>
+          <li>
+            <img src="assets\images\instagram.png" alt="" />
+            <strong>Instagram</strong>
+            <span>Supported</span>
+          </li>
+          <li>
+            <img src="assets\images\linkedin.png" alt="" />
+            <strong>Linkedin</strong>
+            <span>Supported</span>
+          </li>
+          <li>
+            <img src="assets\images\twitter.png" alt="" />
+            <strong>Twitter</strong>
+            <span>Supported</span>
+          </li>
+          <li>
+            <img src="assets\images\pinterest.png" alt="" />
+            <strong>Pinterest</strong>
+            <span>Supported</span>
+          </li>
+          <li>
+            <img src="assets\images\tiktok.png" alt="" />
+            <strong>Tiktok</strong>
+            <span>Supported</span>
+          </li>
+          <li>
+            <img src="assets\images\youtube.png" alt="" />
+            <strong>Youtube</strong>
+            <span>Supported</span>
+          </li>
+        </ul>
+        <img
+          class="socialChannel-img1"
+          src="assets\images\socialImg1.webp"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -------------Why Dmm Section------------------------------------------------- -->
+<section class="whyDmm-main">
+  <img class="socialChannel-img2" src="assets\images\socialImg2.svg" alt="" />
+  <div class="container">
+    <div class="row">
+      <h1>Why Dmm?</h1>
+      <span
+        >We are modern, streamlined and very affordable. Here's what sets us
+        apart from the competition.</span
+      >
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="whyDmm-left">
+          <h2>DMM</h2>
+          <ul>
+            <li>
+              <strong
+                ><i class="bx bx-check-circle"></i>Low-cost, high
+                quality</strong
+              >
+              <p>
+                Most agencies charge way too much. We are a lean team with
+                streamlined workflows and a platform built from the ground up
+                that allows us to charge much less than the big guys.
+              </p>
+            </li>
+            <li>
+              <strong
+                ><i class="bx bx-check-circle"></i> Full transparency</strong
+              >
+              <p>
+                Since day one, we've focused on delivering high-quality work at
+                low prices while providing full access to our platform for
+                reviewing and approving new content and more.
+              </p>
+            </li>
+            <li>
+              <strong><i class="bx bx-check-circle"></i>Cancel anytime</strong>
+              <p>
+                We don't believe in locking you into long contracts. You are
+                free to leave us at any time, but you will just want to stay
+                forever.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="whyDmm-right">
+          <h2>Other Agencies</h2>
+          <ul>
+            <li>
+              <strong
+                ><i class="bx bx-x-circle"></i>Charging as much as they
+                can</strong
+              >
+              <p>
+                Most agencies charge way too much. We are a lean team with
+                streamlined workflows and a platform built from the ground up
+                that allows us to charge much less than the big guys.
+              </p>
+            </li>
+            <li>
+              <strong><i class="bx bx-x-circle"></i> No transparency</strong>
+              <p>
+                Since day one, we've focused on delivering high-quality work at
+                low prices while providing full access to our platform for
+                reviewing and approving new content and more.
+              </p>
+            </li>
+            <li>
+              <strong><i class="bx bx-x-circle"></i>Long-term contracts</strong>
+              <p>
+                We don't believe in locking you into long contracts. You are
+                free to leave us at any time, but you will just want to stay
+                forever.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -------------Are you ReadySection------------------------------------------------- -->
+<section class="areYouready-main">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <h1>
+        Are you ready to take social <br />
+        to the next level?
+      </h1>
+      <a
+        >As a team of people who thrive on social media ourselves, we're all
+        about helping you save time, grow your <br />
+        socials and have a positive impact on your brand.</a
+      >
+    </div>
+
+    <div class="row d-flex align-items-center mt-5">
+      <div class="col-4">
+        <div class="review-main">
+          <span>VISUALLY PLANNED</span>
+          <strong>See all upcoming posts with ease</strong>
+          <p>
+            Your content is visually scheduled for you to have a perfect
+            overview of all upcoming posts on all your social channels.
+          </p>
+          <button>Get Started</button>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="review-img">
+          <img src="assets\images\review2.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex align-items-center mt-5">
+      <div class="col-8">
+        <div class="review-img">
+          <img src="assets\images\review.png" alt="" />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="review-main">
+          <span>APPROVAL WORKFLOW</span>
+          <strong>Review & Approve</strong>
+          <p>
+            When reviewing your posts, simply approve or leave feedback in our
+            easy to use dashboard.
+          </p>
+          <p>We'll never post anything you haven't approved.</p>
+          <button>Get Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -------------Verified Customer review Section------------------------------------------------- -->
+<section class="verified-main">
+  <div class="container">
+    <div class="row">
+      <div class="verified-spec">
+        <span>TESTIMONIALS</span>
+        <h1>Verified customer reviews</h1>
+        <p>
+          Feedbird has helped thousands of small businesses with their social
+          media management and most likely accounts like your own. Here's what
+          some of our clients have to say
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="verified-comment">
+        <div class="card">
+          <div class="card-header">
+            <p-avatar
+              image="assets\images\avatar.jpg"
+              styleClass="mr-2"
+              size="xlarge"
+              shape="circle"
+            ></p-avatar>
+            <div class="avatar-name">
+              <strong>Kim L.</strong>
+              <span>Non-profit organization</span>
+            </div>
+          </div>
+          <div class="card-body">
+            Extremely well written and timely posts, incredible monthly rate and
+            top notch customer service - an amazing combination. The whole
+            program runs like clockwork. Very happy with everything they do for
+            us.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <p-avatar
+              image="assets\images\avatar.jpg"
+              styleClass="mr-2"
+              size="xlarge"
+              shape="circle"
+            ></p-avatar>
+            <div class="avatar-name">
+              <strong>Kim L.</strong>
+              <span>Non-profit organization</span>
+            </div>
+          </div>
+          <div class="card-body">
+            Extremely well written and timely posts, incredible monthly rate and
+            top notch customer service - an amazing combination. The whole
+            program runs like clockwork. Very happy with everything they do for
+            us.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <p-avatar
+              image="assets\images\avatar.jpg"
+              styleClass="mr-2"
+              size="xlarge"
+              shape="circle"
+            ></p-avatar>
+            <div class="avatar-name">
+              <strong>Kim L.</strong>
+              <span>Non-profit organization</span>
+            </div>
+          </div>
+          <div class="card-body">
+            Extremely well written and timely posts, incredible monthly rate and
+            top notch customer service - an amazing combination. The whole
+            program runs like clockwork. Very happy with everything they do for
+            us.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <p-avatar
+              image="assets\images\avatar.jpg"
+              styleClass="mr-2"
+              size="xlarge"
+              shape="circle"
+            ></p-avatar>
+            <div class="avatar-name">
+              <strong>Kim L.</strong>
+              <span>Non-profit organization</span>
+            </div>
+          </div>
+          <div class="card-body">
+            Extremely well written and timely posts, incredible monthly rate and
+            top notch customer service - an amazing combination. The whole
+            program runs like clockwork. Very happy with everything they do for
+            us.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="avatar-group">
+        <p-avatarGroup styleClass="mb-3">
+          <p-avatar
+            image="assets\images\avatar.jpg"
+            size="large"
+            shape="circle"
+          ></p-avatar>
+          <p-avatar
+            image="assets\images\avatar.jpg"
+            size="large"
+            shape="circle"
+          ></p-avatar>
+          <p-avatar
+            image="assets\images\avatar.jpg"
+            size="large"
+            shape="circle"
+          ></p-avatar>
+          <p-avatar
+            image="assets\images\avatar.jpg"
+            size="large"
+            shape="circle"
+          ></p-avatar>
+          <p-avatar
+            image="assets\images\avatar.jpg"
+            size="large"
+            shape="circle"
+          ></p-avatar>
+          <!-- <p-avatar
+            label="+2"
+            shape="circle"
+            size="large"
+            [style]="{ 'background-color': 'var(--blue)', color: '#ffffff' }"
+          ></p-avatar> -->
+        </p-avatarGroup>
+        <span>What our clients say</span>
+      </div>
+      <div class="rate">
+        <span>Rated Excellent</span>
+        <img src="assets\images\rate.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -------------frequently ask question Section------------------------------------------------- -->
+<section class="askQuestion-main">
+  <div class="container">
+    <div class="row">
+      <div class="askQuestion-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>
+          If you have any questions that aren't listed below, feel free to
+          <span>schedule a demo</span> to speak with someone from our team.
+        </p>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="panel">
+      <p-panel header="Title" [toggleable]="true" [collapsed]="true">
+        Content
+    </p-panel>
+    <p-panel header="Title" [toggleable]="true" [collapsed]="true">
+      Content
+  </p-panel>
+  <p-panel header="Title" [toggleable]="true" [collapsed]="true">
+    Content
+</p-panel>
+  </div>
+      <!-- <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingone">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseone"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseone"
+            >
+              Accordion Item #1
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseone"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingone"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseTwo"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseTwo"
+            >
+              Accordion Item #2
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingTwo"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Accordion Item #3
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+<!-- -------------Dmm BlogSection------------------------------------------------- -->
+<section class="blog-main">
+  <div class="container">
+    <div class="row">
+      <div class="blog-header-main">
+      <div class="blog-header">
+        <span>BLOG</span>
+        <h1>DMM Blog</h1>
+      </div>
+        <button>
+          Explore all resources
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="blogCard-main">
+        <div class="blogCard-left">
+          <div class="blog-avatar">
+          <p-avatar image="assets\images\avatar.jpg" styleClass="mr-2" size="large" shape="circle"></p-avatar>
+          <span>Jessica Ryan</span>
+        </div>
+        <div class="blog-spec">
+          <span>SOCIAL MEDIA MANAGEMENT</span>
+          <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, explicabo ipsa laborum, hic ex atque deserunt tempore adipisci minima sit provident beatae consequuntur voluptates iste voluptate modi exercitationem quas aspernatur!</strong>
+          <p>July 20,2023 <i class='bx bxs-circle'></i>5 min read</p>
+        </div>
+        </div>
+        <div class="blogCard-right">
+          <div class="blogCard-top">
+            <div class="blog-avatar">
+              <p-avatar image="assets\images\avatar.jpg" styleClass="mr-2" size="large" shape="circle"></p-avatar>
+              <span>Jessica Ryan</span>
+            </div>
+            <div class="blog-spec">
+              <span>SOCIAL MEDIA MANAGEMENT</span>
+              <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </strong>
+              <p>July 20,2023 <i class='bx bxs-circle'></i>5 min read</p>
+            </div>
+          </div>
+          <div class="blogCard-bottom">
+            <div class="blog-avatar">
+              <p-avatar image="assets\images\avatar.jpg" styleClass="mr-2" size="large" shape="circle"></p-avatar>
+              <span>Jessica Ryan</span>
+            </div>
+            <div class="blog-spec">
+              <span>SOCIAL MEDIA MANAGEMENT</span>
+              <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </strong>
+              <p>July 20,2023 <i class='bx bxs-circle'></i>5 min read</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
